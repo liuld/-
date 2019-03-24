@@ -155,4 +155,7 @@
     i/o线程去请求主库 的binlog，并将得到的binlog日志写到relay log（中继日志） 文件中；
     主库会生成一个 log dump 线程，用来给从库 i/o线程传binlog；
     SQL 线程，会读取relay log文件中的日志，并解析成具体操作，来实现主从的操作一致，而最终数据一致
-  
+  # 25.写一个脚本查找最后创建时间是3天前，后缀是*.log的文件并删除。
+    find / -name "*.log" -ctime +3 -exec rm -f {} \;
+  # 26.写一个脚本将某目录下大于100k的文件移动至/tmp下
+    for i in `find /test -type f -size +100k`;do cd /test && mv $i /tmp;done
