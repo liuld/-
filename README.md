@@ -8,7 +8,8 @@
     运行级别5：图形模式
     运行级别6：重启
   # 2.linux启动过程
-    加电自检，根据bios设定查找主引导记录来加载grub,然后根据grub加载指定的kernel，kernel加载驱动，挂在rootfs，初始化第一个init（centos7为systemd）进程，init进程根据设定的运行级别运行和停止相关的服务，之后启动终端等待用户登陆。
+    加电自检，根据bios设定查找主引导记录来加载grub,然后根据grub加载指定的kernel，kernel加载驱动，
+    挂在rootfs，初始化第一个init（centos7为systemd）进程，init进程根据设定的运行级别运行和停止相关的服务，之后启动终端等待用户登陆。
     开机加电BIOS自检———–>MBR引导———–>grub引导菜单———–>加载内核———–>启动init进程———–>读取inittab文件———–>启动mingetty进程———–>登录系统
   # 3.dns解析过程（www.baidu.com)
     1.检查本地hosts文件是否有记录，没有的话向指定的dns服务器发起请求（递归查询）
